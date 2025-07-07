@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Блоки: текст + зображення</title>
+  <style>
+    body {
+      background: #f7f7f7;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px 0;
+    }
+    .wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .content-block {
+      display: flex;
+      width: 100%;
+      max-width: 800px;
+      height: 260px;
+      background: #fff;
+      box-shadow: 0 2px 16px #d6d6d6;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      position: relative;
+      transition: box-shadow 0.3s;
+    }
+    .content-block:hover {
+      box-shadow: 0 4px 32px #bdbdbd;
+    }
+    .block-text, .block-image {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .block-text {
+      padding: 24px;
+      font-size: 1.3em;
+      text-align: center;
+      background: #f3f6fa;
+      color: #333;
+      z-index: 1;
+    }
+    .block-image {
+      background: #222;
+      z-index: 1;
+    }
+    .block-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s cubic-bezier(.4,0,.2,1);
+      display: block;
+    }
+    .content-block:hover .block-image img {
+      transform: scale(1.08);
+    }
+    .overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .content-block:hover .overlay {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content-block">
+      <div class="block-text">
+        <div>
+          <h2>Ваша мрія — подорожувати?</h2>
+          <p>Відкрийте для себе нові країни разом з нами! Найкращі тури, цікаві маршрути та незабутні враження.</p>
+        </div>
+      </div>
+      <div class="block-image">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Подорож">
+      </div>
+      <div class="overlay"></div>
+    </div>
+    <div class="content-block">
+      <div class="block-text">
+        <div>
+          <h2>Навчайся сучасно!</h2>
+          <p>Сучасні технології, інноваційні методики, підтримка викладачів і цікаві проекти — це твій шлях до успіху!</p>
+        </div>
+      </div>
+      <div class="block-image">
+        <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=600&q=80" alt="Навчання">
+      </div>
+      <div class="overlay"></div>
+    </div>
+  </div>
+</body>
+</html>
